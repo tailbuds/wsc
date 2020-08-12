@@ -1,3 +1,19 @@
-<p>
-  slides works!
-</p>
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <a [routerLink]="['']">
+        <ion-img class="logoOnly" src="./assets/images/logos/alizz-logo-icon.svg">
+        </ion-img>
+      </a>
+      <h2>Welcome to alizz wealth management scorecard <sup>&copy;</sup>
+      </h2>
+      <p>A project by Risk Management & IT - alizz Islamic Bank</p>
+    </ion-slide>
+    <ion-slide>
+      <h2>A Social Project</h2>
+    </ion-slide>
+    <ion-slide>
+      <h2>alizzislamic.com</h2>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

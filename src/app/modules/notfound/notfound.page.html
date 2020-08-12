@@ -1,14 +1,9 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Page not found</ion-title>
-    <app-logo logoClass="small right"></app-logo>
-  </ion-toolbar>
-</ion-header>
+<app-navbar [title]="title"></app-navbar>
 
 <ion-content>
-  <div class="custom-margin">
+  <div class="custom-margin content">
     <h1>Lost in space</h1>
     <ion-img class="not-found" src="../../../assets/images/img/notFoundIcon.svg" alt="page not Found"></ion-img>
-    <p>Page not found. <a [routerLink]="['/input/home']">Go back home?</a> </p>
+    <p>Page not found. <a [routerLink]="['']">Go back home?</a> </p>
   </div>
 </ion-content>

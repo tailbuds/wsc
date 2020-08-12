@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stat.page.scss'],
 })
 export class StatPage implements OnInit {
+  title: string;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    this.title = 'Stats';
   }
 
+  ngOnInit() {}
 }

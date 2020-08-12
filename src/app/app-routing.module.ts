@@ -3,6 +3,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'search',
+    loadChildren: () =>
+      import('./modules/search-results/search-results.module').then(
+        (m) => m.SearchResultsPageModule
+      ),
+  },
+  {
     path: 'input',
     loadChildren: () =>
       import('./modules/input/input.module').then((m) => m.InputPageModule),

@@ -1,0 +1,7 @@
+<ion-searchbar type="text" debounce="250" (ionChange)="getItems($event)"></ion-searchbar>
+<ion-list *ngIf="isItemAvailable" class="content search-list" lines="none">
+
+  <ion-item button *ngFor=" let item of items" [routerLink]="['/search']" [queryParams]="{value: item}">
+    <p class="text">{{ item }}</p>
+  </ion-item>
+</ion-list>

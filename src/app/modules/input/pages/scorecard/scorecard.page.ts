@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./scorecard.page.scss'],
 })
 export class ScorecardPage implements OnInit {
+  title: string;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    this.title = 'Scorecard';
   }
 
+  ngOnInit() {}
 }

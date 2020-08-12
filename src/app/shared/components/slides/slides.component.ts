@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slides.component.scss'],
 })
 export class SlidesComponent implements OnInit {
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+  };
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }

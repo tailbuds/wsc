@@ -1,3 +1,4 @@
+import { ComponentsModule } from './../../../../shared/components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,8 +14,9 @@ import { ScorecardPage } from './scorecard.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ScorecardPageRoutingModule
+    ScorecardPageRoutingModule,
+    ComponentsModule,
   ],
-  declarations: [ScorecardPage]
+  declarations: [ScorecardPage],
 })
 export class ScorecardPageModule {}

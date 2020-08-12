@@ -3,7 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:8100',
+  clientKey: 'SAKsb4CWTh6JQ7mRO7FfY1uGhtoa',
+  clientSecret: 'JzXox9GE_ga_R7z8hSovr0MkJmEa',
+
+  sso: {
+    clientId: 'SAKsb4CWTh6JQ7mRO7FfY1uGhtoa',
+    serverUrl: 'https://localhost:9443',
+    issuer: '/oauth2/token',
+    redirectUri: window.location.origin + '/callback',
+    scope: 'openid profile',
+    tokenEndpoint: '/oauth2/token',
+    userInfoEndpoint: '/oauth2/userinfo',
+    authorizationEndpoint: '/oauth2/authorize',
+    jwksEndpoint: '/oauth2/jwks',
+    showDebugInformation: true,
+    requireHttps: false,
+    responseType: 'id_token token',
+  },
 };
 
 /*
