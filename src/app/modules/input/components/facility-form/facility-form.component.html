@@ -1,0 +1,28 @@
+<ion-list lines="none">
+
+  <form [formGroup]="facilityForm">
+
+    <ion-item>
+      <ion-label position="floating">Product</ion-label>
+      <ion-input formControlName="product" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Limit</ion-label>
+      <ion-input formControlName="limit" type="text"></ion-input>
+    </ion-item>
+
+    <div formGroupName="collateralCoveragePercent">
+      <ion-item>
+        <ion-label position="floating">cashMargin</ion-label>
+        <ion-input formControlName="cashMargin" type="text"></ion-input>
+      </ion-item>
+
+
+
+
+    </div>
+
+  </form>
+
+</ion-list>

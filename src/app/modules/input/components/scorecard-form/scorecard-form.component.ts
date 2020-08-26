@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Facility } from 'src/app/shared/models/facility.model';
 
 @Component({
   selector: 'app-scorecard-form',
@@ -6,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./scorecard-form.component.scss'],
 })
 export class ScorecardFormComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+  };
+
+  log(result: any) {
+    console.log(result.value);
+  }
 
   ngOnInit() {}
-
 }

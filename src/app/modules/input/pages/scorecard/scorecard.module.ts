@@ -2,13 +2,14 @@ import { ScorecardFormComponent } from './../../components/scorecard-form/scorec
 import { ComponentsModule } from './../../../../shared/components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
 import { ScorecardPageRoutingModule } from './scorecard-routing.module';
 
 import { ScorecardPage } from './scorecard.page';
+import { FacilityFormComponent } from '../../components/facility-form/facility-form.component';
 
 @NgModule({
   imports: [
@@ -16,8 +17,9 @@ import { ScorecardPage } from './scorecard.page';
     FormsModule,
     IonicModule,
     ScorecardPageRoutingModule,
+    ReactiveFormsModule,
     ComponentsModule,
   ],
-  declarations: [ScorecardPage, ScorecardFormComponent],
+  declarations: [ScorecardPage, ScorecardFormComponent, FacilityFormComponent],
 })
 export class ScorecardPageModule {}
