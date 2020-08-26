@@ -9,6 +9,7 @@ import { IonicModule } from '@ionic/angular';
 import { ScorecardPageRoutingModule } from './scorecard-routing.module';
 
 import { ScorecardPage } from './scorecard.page';
+import { FacilityFormComponent } from '../../components/facility-form/facility-form.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { ScorecardPage } from './scorecard.page';
     ScorecardPageRoutingModule,
     ComponentsModule,
   ],
-  declarations: [ScorecardPage, ScorecardFormComponent],
+  declarations: [ScorecardPage, ScorecardFormComponent, FacilityFormComponent],
 })
 export class ScorecardPageModule {}
