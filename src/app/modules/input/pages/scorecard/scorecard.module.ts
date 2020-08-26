@@ -1,3 +1,4 @@
+import { ScorecardFormComponent } from './../../components/scorecard-form/scorecard-form.component';
 import { ComponentsModule } from './../../../../shared/components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -17,6 +18,6 @@ import { ScorecardPage } from './scorecard.page';
     ScorecardPageRoutingModule,
     ComponentsModule,
   ],
-  declarations: [ScorecardPage],
+  declarations: [ScorecardPage, ScorecardFormComponent],
 })
 export class ScorecardPageModule {}
