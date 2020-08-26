@@ -2,7 +2,7 @@ import { ScorecardFormComponent } from './../../components/scorecard-form/scorec
 import { ComponentsModule } from './../../../../shared/components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -17,6 +17,7 @@ import { FacilityFormComponent } from '../../components/facility-form/facility-f
     FormsModule,
     IonicModule,
     ScorecardPageRoutingModule,
+    ReactiveFormsModule,
     ComponentsModule,
   ],
   declarations: [ScorecardPage, ScorecardFormComponent, FacilityFormComponent],

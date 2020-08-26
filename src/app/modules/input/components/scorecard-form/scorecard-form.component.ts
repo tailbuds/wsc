@@ -9,8 +9,6 @@ import { Facility } from 'src/app/shared/models/facility.model';
 export class ScorecardFormComponent implements OnInit {
   constructor() {}
 
-  facilities: Facility[];
-
   slideOpts = {
     initialSlide: 0,
     speed: 400,
