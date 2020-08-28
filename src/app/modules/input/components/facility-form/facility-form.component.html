@@ -1,28 +1,69 @@
-<ion-list lines="none">
+<ion-card>
+  <div class="margin">
+    <ion-card-header class="container">
+      <span class="hover-pointer">
+        <ion-icon color="danger" name="trash-outline"></ion-icon>
+      </span>
+      <ion-card-title>Facility {{facilityCount}}</ion-card-title>
+      <span class="hover-pointer">
+        <ion-icon name="remove-outline"></ion-icon>
+      </span>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="none">
+        <form>
+          <ion-item>
+            <ion-label position="floating">Facility product</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Facility limit (OMR '000)</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-text color="medium">
+              Collateral Information<br>
+              <small>
+                Any Promise to provide collateral at later date should not be considered here
+              </small>
+            </ion-text>
+          </ion-item>
 
-  <form [formGroup]="facilityForm">
 
-    <ion-item>
-      <ion-label position="floating">Product</ion-label>
-      <ion-input formControlName="product" type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Limit</ion-label>
-      <ion-input formControlName="limit" type="text"></ion-input>
-    </ion-item>
-
-    <div formGroupName="collateralCoveragePercent">
-      <ion-item>
-        <ion-label position="floating">cashMargin</ion-label>
-        <ion-input formControlName="cashMargin" type="text"></ion-input>
-      </ion-item>
-
-
-
-
-    </div>
-
-  </form>
-
-</ion-list>
+          <ion-item>
+            <ion-label position="stacked">Cash Margin</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Bank Guarantee one</ion-label>
+            <p><small>Rating A3 by Moody's or A- by S&P or higher rating</small></p>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Bank Guarantees two</ion-label>
+            <p><small>Rating Baa by Moody's or BBB by S&P or higher rating</small></p>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Shares</ion-label>
+            <p><small>Well Marketable Shares</small></p>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">1st Degree Freehold Land/Building</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">1st Degree Leasehold Land/Building</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">2nd Degree Freehold Land/Building</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </form>
+      </ion-list>
+    </ion-card-content>
+  </div>
+</ion-card>

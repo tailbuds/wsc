@@ -1,14 +1,11 @@
-<ion-slides pager="true" [options]="slideOpts">
+<ion-slides pager="false" [options]="slideOpts">
 
   <ion-slide>
     <form>
-
       <ion-item>
-
         <ion-label position="floating">Customer Name</ion-label>
         <ion-input ngModel name="name" #name (change)=log(name) type="text"></ion-input>
       </ion-item>
-
       <ion-item>
         <ion-list>
           <ion-radio-group value="new">
@@ -24,12 +21,8 @@
               <ion-radio slot="start" value="true"></ion-radio>
             </ion-item>
           </ion-radio-group>
-
-
         </ion-list>
       </ion-item>
-
-
       <ion-item>
         <ion-label>Gender</ion-label>
         <ion-select ngModel name="gender" #gender (ionChange)=log(gender) placeholder="Select One">
@@ -38,10 +31,6 @@
           <ion-select-option value="others">Others</ion-select-option>
         </ion-select>
       </ion-item>
-
-
-
-
       <ion-item>
         <ion-label>Age Range</ion-label>
         <ion-select ngModel name="ageRange" #ageRange (ionChange)=log(ageRange) placeholder="Select One">
@@ -53,21 +42,14 @@
           <ion-select-option value="more than 70">More than 70 Years</ion-select-option>
         </ion-select>
       </ion-item>
-
-
       <ion-item>
         <ion-label>Nationality Type</ion-label>
         <ion-select ngModel name="nationality" #nationality (ionChange)=log(nationality) placeholder="Select One">
           <ion-select-option value="omani">Omani</ion-select-option>
           <ion-select-option value="expat">Expat</ion-select-option>
           <ion-select-option value="gcc">GCC</ion-select-option>
-
-
         </ion-select>
       </ion-item>
-
-
-
     </form>
   </ion-slide>
 
@@ -76,14 +58,10 @@
 
   <ion-slide>
     <form>
-
       <ion-item>
-
         <ion-label position="floating">Net Worth(OMR '000)</ion-label>
         <ion-input ngModel name="netWorthValue" #netWorthValue (change)=log(netWorthValue) type="number"></ion-input>
       </ion-item>
-
-
       <ion-item>
         <ion-label>Net Worth Support Documents</ion-label>
         <ion-select ngModel name="supportDocuments" #supportDocuments (ionChange)=log(supportDocuments)
@@ -96,12 +74,8 @@ auditor B">Auditor B</ion-select-option>
 auditor C">Auditor C</ion-select-option>
           <ion-select-option value="self declared">Self Declared</ion-select-option>
           <ion-select-option value="no information">No Information</ion-select-option>
-
         </ion-select>
       </ion-item>
-
-
-
       <ion-item>
         <ion-label>Repayment Source</ion-label>
         <ion-select ngModel name="repaymentSource" #repaymentSource (ionChange)=log(repaymentSource)
@@ -115,26 +89,18 @@ auditor C">Auditor C</ion-select-option>
           <ion-select-option value="identifed cash flow not assigned">Identifed Cash flow not assigned
           </ion-select-option>
           <ion-select-option value="unidentified cash flow">Unidentified Cash flow"</ion-select-option>
-
         </ion-select>
       </ion-item>
-
-
       <ion-item>
-
         <ion-label position="floating">Proposed total limit(OMR '000)</ion-label>
         <ion-input ngModel name="proposedTotalLimit" #proposedTotalLimit (change)=log(proposedTotalLimit) type="number">
         </ion-input>
       </ion-item>
-
       <ion-item>
         <ion-label position="floating">Total Existing Limit in all banks-BCSB (OMR '000)</ion-label>
         <ion-input ngModel name="totalExistingLimit" #totalExistingLimit (change)=log(totalExistingLimit) type="number">
         </ion-input>
       </ion-item>
-
-
-
       <ion-item>
         <ion-label>Customer CBO-BCSB status</ion-label>
         <ion-select ngModel name="bcsbStatus" #bcsbStatus (ionChange)=log(bcsbStatus) placeholder="Select One">
@@ -147,12 +113,8 @@ auditor C">Auditor C</ion-select-option>
           <ion-select-option value="DOUBTFUL">DOUBTFUL</ion-select-option>
           <ion-select-option value="LOSS">LOSS</ion-select-option>
           <ion-select-option value="no information (no history)">No Information (no history)</ion-select-option>
-
         </ion-select>
       </ion-item>
-
-
-
       <ion-item>
         <ion-label>Customer related company CBO-BCSB status</ion-label>
         <ion-select ngModel name="bcsbRelatedCompaniesStatus" #bcsbRelatedCompaniesStatus
@@ -244,11 +206,38 @@ auditor C">Auditor C</ion-select-option>
 
 
   <ion-slide>
+    <div class="column-flex">
+      <div class="row-flex">
+        <app-facility-form></app-facility-form>
+        <app-facility-form></app-facility-form>
+        <app-facility-form></app-facility-form>
+        <app-facility-form></app-facility-form>
+      </div>
+      <ion-button class="end">Add Facility</ion-button>
+    </div>
+  </ion-slide>
 
-    <app-facility-form></app-facility-form>
+  <ion-slide>
+    <ion-item>
+      <ion-button color="success" expand="block" shape="round">
+        <ion-icon slot="start" src="../assets/images/icons/microsoft-excel.svg"></ion-icon>
+        Corporate Guarantee related financials template
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"></ion-label>
+      <ion-input type="file">
+      </ion-input>
+      <ion-icon slot="end" name="document-outline"></ion-icon>
+    </ion-item>
 
   </ion-slide>
 
+
+
+  <ion-slide>
+
+  </ion-slide>
 
 
 

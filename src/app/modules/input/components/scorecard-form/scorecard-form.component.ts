@@ -7,6 +7,7 @@ import { Facility } from 'src/app/shared/models/facility.model';
   styleUrls: ['./scorecard-form.component.scss'],
 })
 export class ScorecardFormComponent implements OnInit {
+  facilities: Array<Facility>;
   constructor() {}
 
   slideOpts = {

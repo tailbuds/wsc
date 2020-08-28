@@ -8,26 +8,10 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
   styleUrls: ['./facility-form.component.scss'],
 })
 export class FacilityFormComponent implements OnInit {
-  facilityForm: FormGroup;
+  @Input() facility: Facility;
+  @Input() facilityCount: number;
 
-  constructor(fb: FormBuilder) {
-    this.facilityForm = fb.group({
-      product: [''],
-      limit: [''],
-      collateralCoveragePercent: fb.group({
-        cashMargin: [''],
-        bankGuaranteeOne: [''],
-        bankGuaranteeTwo: [''],
-        shares: [''],
-        freeholdFirstDegree: [''],
-        leaseholdFirstDegree: [''],
-        freeholdSecondDegree: [''],
-      }),
-      score: [''],
-    });
-
-    console.log(this.facilityForm);
-  }
+  constructor() {}
 
   ngOnInit() {}
 }
