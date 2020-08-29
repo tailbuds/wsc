@@ -6,6 +6,7 @@ import { StartComponent } from './start/start.component';
 import { SlidesComponent } from './slides/slides.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
     LogoComponent,
     NavbarComponent,
     SearchBarComponent,
+    ProgressBarComponent,
   ],
   exports: [
     SlidesComponent,
@@ -21,6 +23,7 @@ import { CommonModule } from '@angular/common';
     LogoComponent,
     NavbarComponent,
     SearchBarComponent,
+    ProgressBarComponent,
   ],
   imports: [CommonModule, RouterModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
