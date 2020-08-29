@@ -1,4 +1,4 @@
-<ion-slides pager="false" [options]="slideOpts">
+<ion-slides pager="true" [options]="slideOpts">
 
   <ion-slide>
     <form>
@@ -218,25 +218,57 @@ auditor C">Auditor C</ion-select-option>
   </ion-slide>
 
   <ion-slide>
-    <ion-item>
-      <ion-button color="success" expand="block" shape="round">
-        <ion-icon slot="start" src="../assets/images/icons/microsoft-excel.svg"></ion-icon>
-        Corporate Guarantee related financials template
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label position="stacked"></ion-label>
-      <ion-input type="file">
-      </ion-input>
-      <ion-icon slot="end" name="document-outline"></ion-icon>
-    </ion-item>
-
+    <div class="column-flex content">
+      <div class="margin">
+        <ion-button class="big-btn" color="success" shape="round">
+          <ion-icon slot="start" src="../assets/images/icons/microsoft-excel.svg"></ion-icon>
+          Corporate Guarantee<br>related financials<br>template
+          <ion-icon slot="end" name="arrow-down" style="color: #121212;"></ion-icon>
+        </ion-button>
+      </div>
+      <div class="margin">
+        <ion-item>
+          <ion-label position="stacked"></ion-label>
+          <ion-input type="file">
+          </ion-input>
+          <ion-icon slot="end" name="cloud-upload-outline" style="color: #407bbf"></ion-icon>
+        </ion-item>
+      </div>
+    </div>
   </ion-slide>
 
 
 
   <ion-slide>
-
+    <div class="column-flex">
+      <div class="content margin-top">
+        <ion-text color="medium">
+          Please compile all support documents into a PDF and upload here. The submitted document will be used in the
+          review process.
+        </ion-text>
+      </div>
+      <div class="content margin-top">
+        <ion-text>All support documents compiled as a single PDF</ion-text>
+      </div>
+      <div class="content margin-top">
+        <ion-item>
+          <ion-label position="stacked"></ion-label>
+          <ion-input type="file">
+          </ion-input>
+          <ion-icon slot="end" name="cloud-upload-outline" style="color: #407bbf"></ion-icon>
+        </ion-item>
+      </div>
+      <div class="content margin-top">
+        <ion-button shape="round">Submit for approval
+          <ion-icon slot="end" name="checkmark-done-outline"></ion-icon>
+        </ion-button>
+      </div>
+      <div class="content margin-top">
+        <ion-button shape="round">Save as Draft
+          <ion-icon slot="end" name="save-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
   </ion-slide>
 
 
