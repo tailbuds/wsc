@@ -7,9 +7,52 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
   title: string;
+  scorecards: Array<object>;
 
   constructor() {
     this.title = 'Home';
+    this.scorecards = [
+      {
+        name: 'John Doe',
+        avgFrr: 80,
+        frrColor: 'success',
+        orr: 100,
+        orrColor: 'warning',
+        status: 'draft',
+      },
+      {
+        name: 'Tom Doe',
+        avgFrr: 80,
+        frrColor: 'success',
+        orr: 100,
+        orrColor: 'warning',
+        status: 'draft',
+      },
+      {
+        name: 'Tom Doe',
+        avgFrr: 80,
+        frrColor: 'success',
+        orr: 100,
+        orrColor: 'warning',
+        status: 'draft',
+      },
+      {
+        name: 'Tom Doe',
+        avgFrr: 80,
+        frrColor: 'success',
+        orr: 100,
+        orrColor: 'warning',
+        status: 'draft',
+      },
+      {
+        name: 'Tom Doe',
+        avgFrr: 80,
+        frrColor: 'success',
+        orr: 100,
+        orrColor: 'warning',
+        status: 'draft',
+      },
+    ];
   }
 
   ngOnInit() {}

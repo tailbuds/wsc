@@ -10,6 +10,7 @@ import { ScorecardPageRoutingModule } from './scorecard-routing.module';
 
 import { ScorecardPage } from './scorecard.page';
 import { FacilityFormComponent } from '../../components/facility-form/facility-form.component';
+import { BasicCustomerDetailsComponent } from '../../components/basic-customer-details/basic-customer-details.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,11 @@ import { FacilityFormComponent } from '../../components/facility-form/facility-f
     ReactiveFormsModule,
     ComponentsModule,
   ],
-  declarations: [ScorecardPage, ScorecardFormComponent, FacilityFormComponent],
+  declarations: [
+    ScorecardPage,
+    ScorecardFormComponent,
+    FacilityFormComponent,
+    BasicCustomerDetailsComponent,
+  ],
 })
 export class ScorecardPageModule {}
