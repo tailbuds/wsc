@@ -15,3 +15,12 @@
 .margin {
   margin: 5%;
 }
+
+.column-flex {
+  flex-direction: column;
+}
+
+ion-card {
+  max-width: 80%;
+  min-width: 80%;
+}

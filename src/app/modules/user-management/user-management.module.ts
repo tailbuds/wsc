@@ -8,6 +8,7 @@ import { UserManagementPageRoutingModule } from './user-management-routing.modul
 
 import { UserManagementPage } from './user-management.page';
 import { ComponentsModule } from '../../shared/components/components.module';
+import { UserCardComponent } from './components/user-card/user-card.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { ComponentsModule } from '../../shared/components/components.module';
     UserManagementPageRoutingModule,
     ComponentsModule,
   ],
-  declarations: [UserManagementPage],
+  declarations: [UserManagementPage, UserCardComponent],
 })
 export class UserManagementPageModule {}

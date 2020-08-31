@@ -2,8 +2,8 @@ export class User {
   private _id: string;
   username: string;
   roles: Array<string>;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 
   /**
    * Getter id
@@ -17,8 +17,8 @@ export class User {
     id: string,
     username: string,
     roles: Array<string>,
-    createdAt: Date,
-    updatedAt: Date
+    createdAt: string,
+    updatedAt: string
   ) {
     this._id = id;
     this.username = username;

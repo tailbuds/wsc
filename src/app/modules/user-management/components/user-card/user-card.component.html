@@ -1,0 +1,16 @@
+<ion-card>
+  <ion-col class="margin">
+    <ion-card-header>
+      <ion-card-title color="primary">{{user.username}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="text-center">
+        <ion-text color="primary">Roles</ion-text>
+        <br>
+        <ion-select multiple="true" placeholder="Select appropriately">
+          <ion-select-option *ngFor="let role of roles">{{role}}</ion-select-option>
+        </ion-select>
+      </div>
+    </ion-card-content>
+  </ion-col>
+</ion-card>

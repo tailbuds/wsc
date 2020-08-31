@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column-flex {
+  flex-direction: column;
+}
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.end {
+  margin-top: 2%;
+  margin-bottom: 10%;
+}
+
+.margin {
+  margin: 5%;
+}
+
+.margin-medium {
+  margin: 10%;
+}
+
+.margin-large {
+  margin: 25%;
+}
+
+.margin-top {
+  margin-top: 5%;
+}
