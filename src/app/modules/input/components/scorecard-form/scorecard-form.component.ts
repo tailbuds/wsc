@@ -32,18 +32,6 @@ export class ScorecardFormComponent implements OnInit {
     this.slides.slidePrev();
   }
 
-  beginSlide() {
-    this.slides.isBeginning().then((v) => {
-      return v;
-    });
-  }
-
-  endSlide() {
-    this.slides.isEnd().then((v) => {
-      this.end = v;
-    });
-  }
-
   checkSlide() {
     this.slides.isEnd().then((v) => {
       this.end = v;
