@@ -35,3 +35,32 @@
 .big-btn {
   height: 60px;
 }
+
+.width-80 {
+  min-width: 80%;
+  max-width: 80%;
+}
+
+#right-arrow {
+  position: fixed;
+  bottom: 40%;
+  right: 2%;
+  z-index: 1000;
+  opacity: 0.3;
+}
+
+#right-arrow:hover {
+  opacity: 0.9;
+}
+
+#left-arrow {
+  position: fixed;
+  bottom: 40%;
+  left: 1%;
+  z-index: 1000;
+  opacity: 0.3;
+}
+
+#left-arrow:hover {
+  opacity: 0.9;
+}

@@ -8,6 +8,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { ScoreCardComponent } from './score-card/score-card.component';
+import { ScrollBarDirective } from './scroll-bar/scroll-bar.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ScoreCardComponent } from './score-card/score-card.component';
     SearchBarComponent,
     ProgressBarComponent,
     ScoreCardComponent,
+    ScrollBarDirective,
   ],
   exports: [
     SlidesComponent,
@@ -27,6 +29,7 @@ import { ScoreCardComponent } from './score-card/score-card.component';
     SearchBarComponent,
     ProgressBarComponent,
     ScoreCardComponent,
+    ScrollBarDirective,
   ],
   imports: [CommonModule, RouterModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -8,6 +8,20 @@
   margin-left: auto;
 }
 
-ion-list {
-  display: inline-flex;
+.margin {
+  margin: 5%;
+}
+
+ion-radio {
+  padding: 3px;
+}
+
+ion-label {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.zero-margin {
+  margin-bottom: -10px;
+  padding: 0px;
 }
