@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ScorecardFormComponent } from './scorecard-form.component';
+import { CorporateGuaranteeComponent } from './corporate-guarantee.component';
 
-describe('ScorecardFormComponent', () => {
-  let component: ScorecardFormComponent;
-  let fixture: ComponentFixture<ScorecardFormComponent>;
+describe('CorporateGuaranteeComponent', () => {
+  let component: CorporateGuaranteeComponent;
+  let fixture: ComponentFixture<CorporateGuaranteeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScorecardFormComponent ],
+      declarations: [ CorporateGuaranteeComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ScorecardFormComponent);
+    fixture = TestBed.createComponent(CorporateGuaranteeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

@@ -1,0 +1,26 @@
+.margin {
+  margin: 5%;
+}
+
+.margin-top {
+  margin-top: 5%;
+}
+
+.big-btn {
+  height: auto;
+}
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#template-text {
+  padding: 5px;
+  margin: 1%;
+}
