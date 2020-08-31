@@ -39,6 +39,13 @@ const routes: Routes = [
       import('./index/index.module').then((m) => m.IndexPageModule),
   },
   {
+    path: 'users',
+    loadChildren: () =>
+      import('./modules/user-management/user-management.module').then(
+        (m) => m.UserManagementPageModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'notfound',
     pathMatch: 'full',

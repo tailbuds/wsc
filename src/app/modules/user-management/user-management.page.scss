@@ -1,0 +1,17 @@
+.width-80 {
+  max-width: 80%;
+}
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.margin {
+  margin: 5%;
+}
