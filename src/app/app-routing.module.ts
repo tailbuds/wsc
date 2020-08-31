@@ -15,6 +15,11 @@ const routes: Routes = [
       import('./modules/input/input.module').then((m) => m.InputPageModule),
   },
   {
+    path: 'oauth',
+    redirectTo: 'input',
+    pathMatch: 'full',
+  },
+  {
     path: 'approve',
     loadChildren: () =>
       import('./modules/approve/approve.module').then(
