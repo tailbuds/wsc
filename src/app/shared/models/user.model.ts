@@ -5,14 +5,6 @@ export class User {
   createdAt: string;
   updatedAt: string;
 
-  /**
-   * Getter id
-   * @return {string}
-   */
-  public get id(): string {
-    return this._id;
-  }
-
   constructor(
     id: string,
     username: string,
@@ -25,6 +17,14 @@ export class User {
     this.roles = roles;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
+  }
+
+  /**
+   * Getter id
+   * @return {string}
+   */
+  public get id(): string {
+    return this._id;
   }
 
   checkRole(role: string): boolean {

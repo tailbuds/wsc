@@ -12,6 +12,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonCustomScrollbarModule } from 'ion-custom-scrollbar';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { IonCustomScrollbarModule } from 'ion-custom-scrollbar';
     IonCustomScrollbarModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
@@ -29,6 +31,7 @@ import { IonCustomScrollbarModule } from 'ion-custom-scrollbar';
   providers: [
     StatusBar,
     SplashScreen,
+    HttpClientModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],
