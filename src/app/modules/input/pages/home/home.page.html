@@ -1,4 +1,7 @@
 <app-navbar [title]="title"></app-navbar>
 
-<ion-content>
+<ion-content appScrollBar>
+    <div class="content row-flex">
+        <app-score-card *ngFor="let scorecard of scorecards" [scorecard]="scorecard"></app-score-card>
+    </div>
 </ion-content>

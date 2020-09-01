@@ -15,6 +15,11 @@ const routes: Routes = [
       import('./modules/input/input.module').then((m) => m.InputPageModule),
   },
   {
+    path: 'oauth',
+    redirectTo: 'input',
+    pathMatch: 'full',
+  },
+  {
     path: 'approve',
     loadChildren: () =>
       import('./modules/approve/approve.module').then(
@@ -32,6 +37,13 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./index/index.module').then((m) => m.IndexPageModule),
+  },
+  {
+    path: 'users',
+    loadChildren: () =>
+      import('./modules/user-management/user-management.module').then(
+        (m) => m.UserManagementPageModule
+      ),
   },
   {
     path: '**',

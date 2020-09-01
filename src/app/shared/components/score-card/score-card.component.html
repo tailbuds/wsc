@@ -1,0 +1,46 @@
+<ion-card>
+  <div class="margin column-flex">
+    <ion-card-header>
+      <ion-card-title color="primary">{{scorecard.name}}</ion-card-title>
+      <ion-card-subtitle>Scores</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="row-flex">
+        <ion-item>
+          <div class="text-center">
+            <ion-text color="primary">Average FRR</ion-text>
+            <br>
+            <ion-text [color]="scorecard.frrColor">{{scorecard.avgFrr}}</ion-text>
+          </div>
+        </ion-item>
+
+        <ion-item class="column-flex">
+          <div class="text-center">
+            <ion-text color="primary">ORR</ion-text>
+            <br>
+            <ion-text [color]="scorecard.orrColor">{{scorecard.orr}}</ion-text>
+          </div>
+        </ion-item>
+
+
+        <ion-item class="column-flex">
+          <div class="text-center">
+            <ion-text color="primary">Status</ion-text>
+            <br>
+            <ion-text color="medium">{{scorecard.status}}</ion-text>
+          </div>
+        </ion-item>
+
+      </div>
+      <div class="row-flex">
+        <ion-button color="warning" size="medium">
+          <ion-icon name="pencil-outline" style="color: #ffffff;"></ion-icon>
+        </ion-button>
+        <ion-button color="danger" size="medium">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+  </div>
+</ion-card>

@@ -1,0 +1,23 @@
+<ion-card>
+  <ion-col class="margin">
+    <ion-card-header>
+      <ion-card-title color="primary">{{user.username}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="text-center">
+        <ion-text color="primary">Roles</ion-text>
+        <br>
+        <ion-select multiple="true" placeholder="Select appropriately" [ngModel]="user.roles" name="updatedRoles"
+          #updatedRoles (ionChange)=updateRoles(updatedRoles.value)>
+          <ion-select-option *ngFor="let role of roles" [value]="role">{{role}}
+          </ion-select-option>
+        </ion-select>
+        <div class="row-flex">
+          <ion-button color="danger" size="large" fill="clear" (click)="deleteUser()">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-col>
+</ion-card>

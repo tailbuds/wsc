@@ -19,6 +19,11 @@ const routes: Routes = [
           import('./pages/home/home.module').then((m) => m.HomePageModule),
       },
       {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+      },
+      {
         path: 'scorecard',
         loadChildren: () =>
           import('./pages/scorecard/scorecard.module').then(

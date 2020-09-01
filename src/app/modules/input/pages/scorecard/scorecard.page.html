@@ -1,5 +1,36 @@
 <app-navbar [title]="title"></app-navbar>
-
-<ion-content>
-    <app-scorecard-form></app-scorecard-form>
+<ion-content appScrollBar>
+    <ion-button *ngIf="!start" fill="clear" id="left-arrow" (click)="prevSlide()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="!end" fill="clear" id="right-arrow" (click)="nextSlide()">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+    <app-basic-customer-details></app-basic-customer-details>
+    <ion-slides #scorecardSlides pager="true" [options]="slideOpts" #sliders (ionSlideDidChange)="checkSlide()">
+        <ion-slide>
+            <app-getting-started class="width-80"></app-getting-started>
+        </ion-slide>
+        <ion-slide>
+            <app-orr class="width-80"></app-orr>
+        </ion-slide>
+        <ion-slide>
+            <div class="column-flex">
+                <ion-title color="primary"> Facilities & collaterals <sup>(step 3 of 5)</sup> </ion-title>
+                <div class="row-flex">
+                    <app-facility-form></app-facility-form>
+                    <app-facility-form></app-facility-form>
+                    <app-facility-form></app-facility-form>
+                    <app-facility-form></app-facility-form>
+                </div>
+                <ion-button class="end">Add Facility</ion-button>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <app-corporate-guarantee class="width-80"></app-corporate-guarantee>
+        </ion-slide>
+        <ion-slide>
+            <app-support-documents class="width-80"></app-support-documents>
+        </ion-slide>
+    </ion-slides>
 </ion-content>

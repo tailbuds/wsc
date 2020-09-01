@@ -1,0 +1,41 @@
+<ion-card>
+  <div class="margin">
+    <ion-card-header>
+      <ion-card-title color="primary"> Getting started <sup>(step 1 of 5)</sup> </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-label color="primary">Gender</ion-label>
+          <ion-select interface="action-sheet" ngModel name="gender" #gender (ionChange)=log(gender)
+            placeholder="Select One">
+            <ion-select-option value="male">Male</ion-select-option>
+            <ion-select-option value="female">Female</ion-select-option>
+            <ion-select-option value="others">Others</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary">Age Range</ion-label>
+          <ion-select interface="action-sheet" ngModel name="ageRange" #ageRange (ionChange)=log(ageRange)
+            placeholder="Select One">
+            <ion-select-option value="less than 30">Less than 30 Years</ion-select-option>
+            <ion-select-option value="30-45">30-45 Years</ion-select-option>
+            <ion-select-option value="45-55">45-55 Years</ion-select-option>
+            <ion-select-option value="55-65">55-65 Years</ion-select-option>
+            <ion-select-option value="65-70">65-70 Years</ion-select-option>
+            <ion-select-option value="more than 70">More than 70 Years</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary">Nationality Type</ion-label>
+          <ion-select interface="action-sheet" ngModel name="nationality" #nationality (ionChange)=log(nationality)
+            placeholder="Select One">
+            <ion-select-option value="omani">Omani</ion-select-option>
+            <ion-select-option value="expat">Expat</ion-select-option>
+            <ion-select-option value="gcc">GCC</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </div>
+</ion-card>

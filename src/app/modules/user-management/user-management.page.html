@@ -1,0 +1,6 @@
+<app-navbar [title]="title"></app-navbar>
+<ion-content appScrollBar>
+  <ion-row *ngIf="users" class="row-flex">
+    <app-user-card *ngFor="let user of users" [user]="user" class="width-80"></app-user-card>
+  </ion-row>
+</ion-content>

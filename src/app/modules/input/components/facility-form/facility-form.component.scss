@@ -1,0 +1,26 @@
+ion-text {
+  text-align: center;
+}
+ion-icon {
+  width: 32px;
+  height: 32px;
+  //   color: #c74e4e;
+  //   float: left;
+}
+ion-card-title {
+  //   margin-left: -32px;
+  text-align: center;
+}
+.margin {
+  margin: 5%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hover-pointer :hover {
+  cursor: pointer;
+  pointer-events: auto;
+}

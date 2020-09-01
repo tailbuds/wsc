@@ -13,12 +13,12 @@ export class StartComponent implements OnInit {
 
   login() {
     location.href =
-      'https://localhost:9443/oauth2/authorize?response_type=code&redirect_uri=http://localhost:8100/oauth&client_id=vaVGBKrBk6gaSzAKGSjpK5gPayIa';
+      'https://localhost:9443/oauth2/authorize?response_type=code&redirect_uri=http://localhost:8100/oauth&client_id=SAKsb4CWTh6JQ7mRO7FfY1uGhtoa';
   }
 
-  // navigateToMakerPage() {
-  //   this.router.navigate(['input/home']);
-  // }
+  navigateToMakerPage() {
+    this.router.navigate(['input/home']);
+  }
 
   // navigateToApprovePage() {
   //   this.router.navigate(['approve/home']);
