@@ -5,6 +5,8 @@
       <ion-card-subtitle *ngIf="scorecard.status !== 'draft'">Scores</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
+
+
       <div class="row-flex">
         <ion-item *ngIf="scorecard.status !== 'draft'">
           <div class="text-center">
@@ -33,6 +35,7 @@
         </ion-item>
 
       </div>
+
       <div class="row-flex">
         <ion-button color="warning" size="medium">
           <ion-icon name="pencil-outline" style="color: #ffffff;"></ion-icon>
@@ -41,7 +44,6 @@
           <ion-icon name="trash-outline"></ion-icon>
         </ion-button>
       </div>
-
     </ion-card-content>
   </div>
 </ion-card>
