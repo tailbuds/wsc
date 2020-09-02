@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Scorecard } from '../../models/scorecard.model';
 
 @Component({
   selector: 'app-score-card',
@@ -6,20 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./score-card.component.scss'],
 })
 export class ScoreCardComponent implements OnInit {
-  @Input() scorecard: {
-    name: string;
-    avgFrr: number;
-    frrColor: string;
-    orr: number;
-    orrColor: string;
-    status: string;
-  };
-  // name: string = 'DEMO NAME';
-  // orrScore: number = 100;
-  // frrScore: number = 80;
-  // status: string = 'draft';
+  @Input() scorecard: Scorecard;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.scorecard = new Scorecard(this.scorecard);
+  }
 }

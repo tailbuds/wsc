@@ -1,21 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../../../shared/services/http.service';
-import { User } from 'src/app/shared/models/user.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  users: Array<User>;
-  user: User;
-  private http: HttpService;
+  constructor(private http: HttpService) {}
 
-  constructor() {}
-  get(): void {
-    this.http
-      .get('http://localhost:6143/users')
-      .subscribe((users: Array<User>) => {
-        return users;
-      });
+  postUser(data: object): Observable<any> {
+    return this.http.post(`http://localhost:6143/users`, data);
+  }
+
+  getUser(username: string): Observable<any> {
+    return this.http.get(`http://localhost:6143/users/${username}`);
+  }
+
+  getUsers(): Observable<any> {
+    return this.http.get(`http://localhost:6143/users`);
+  }
+
+  patchUser(data: object): Observable<any> {
+    return this.http.patch(`http://localhost:6143/users`, data);
+  }
+
+  deleteUser(username: string): Observable<any> {
+    return this.http.delete(`http://localhost:6143/users/${username}`);
   }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ScorecardService } from '../../../../shared/services/scorecard.service';
+import { HttpService } from '../../../../shared/services/http.service';
+import { Scorecard } from '../../../../shared/models/scorecard.model';
 
 @Component({
   selector: 'app-home',
@@ -7,53 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
   title: string;
-  scorecards: Array<object>;
+  scorecards: Array<Scorecard>;
 
-  constructor() {
+  constructor(private scService: ScorecardService) {
     this.title = 'Home';
-    this.scorecards = [
-      {
-        name: 'John Doe',
-        avgFrr: 80,
-        frrColor: 'success',
-        orr: 100,
-        orrColor: 'warning',
-        status: 'draft',
-      },
-      {
-        name: 'Tom Doe',
-        avgFrr: 80,
-        frrColor: 'success',
-        orr: 100,
-        orrColor: 'warning',
-        status: 'draft',
-      },
-      {
-        name: 'Tom Doe',
-        avgFrr: 80,
-        frrColor: 'success',
-        orr: 100,
-        orrColor: 'warning',
-        status: 'draft',
-      },
-      {
-        name: 'Tom Doe',
-        avgFrr: 80,
-        frrColor: 'success',
-        orr: 100,
-        orrColor: 'warning',
-        status: 'draft',
-      },
-      {
-        name: 'Tom Doe',
-        avgFrr: 80,
-        frrColor: 'success',
-        orr: 100,
-        orrColor: 'warning',
-        status: 'draft',
-      },
-    ];
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.scService.getScorecards().subscribe((res: Array<Scorecard>) => {
+      this.scorecards = res;
+    });
+  }
 }

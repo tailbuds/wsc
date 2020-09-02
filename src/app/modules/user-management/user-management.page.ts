@@ -1,6 +1,6 @@
-import { HttpService } from './../../shared/services/http.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/shared/models/user.model';
+import { UserService } from './services/user.service';
 @Component({
   selector: 'app-user-management',
   templateUrl: './user-management.page.html',
@@ -11,17 +11,15 @@ export class UserManagementPage implements OnInit {
 
   users: Array<User>;
 
-  constructor(private http: HttpService) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     this.getUsers();
   }
 
-  getUsers(): void {
-    this.http
-      .get('http://localhost:6143/users')
-      .subscribe((users: Array<User>) => {
-        this.users = users;
-      });
+  getUsers() {
+    this.userService.getUsers().subscribe((users: Array<User>) => {
+      this.users = users;
+    });
   }
 }
