@@ -1,24 +1,25 @@
 <ion-card>
   <div class="margin column-flex">
     <ion-card-header>
-      <ion-card-title color="primary">{{scorecard.name}}</ion-card-title>
-      <ion-card-subtitle>Scores</ion-card-subtitle>
+      <ion-card-title color="primary">{{scorecard.customer.name}}</ion-card-title>
+      <ion-card-subtitle *ngIf="scorecard.status !== 'draft'">Scores</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <div class="row-flex">
-        <ion-item>
+        <ion-item *ngIf="scorecard.status !== 'draft'">
           <div class="text-center">
             <ion-text color="primary">Average FRR</ion-text>
             <br>
-            <ion-text [color]="scorecard.frrColor">{{scorecard.avgFrr}}</ion-text>
+            <ion-text [color]="scorecard.frrColor()">
+              {{(scorecard.customer.wtdAvgFacilityScore) | number }}</ion-text>
           </div>
         </ion-item>
 
-        <ion-item class="column-flex">
+        <ion-item class="column-flex" *ngIf="scorecard.status !== 'draft'">
           <div class="text-center">
             <ion-text color="primary">ORR</ion-text>
             <br>
-            <ion-text [color]="scorecard.orrColor">{{scorecard.orr}}</ion-text>
+            <ion-text [color]="scorecard.orrColor()">{{scorecard.orr}}</ion-text>
           </div>
         </ion-item>
 

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../../../../shared/models/user.model';
 import { HttpService } from '../../../../shared/services/http.service';
 import { AlertController } from '@ionic/angular';
+import { UserService } from '../../services/user.service';
 
 export enum roles {
   admin = 'admin',
@@ -21,19 +22,21 @@ export class UserCardComponent implements OnInit {
   roles = [roles.admin, roles.maker, roles.approver, roles.usrMgt];
 
   constructor(
-    private http: HttpService,
+    private userService: UserService,
     private alertController: AlertController
   ) {}
 
   ngOnInit() {}
 
   updateRoles(updatedRoles: Array<string>): void {
-    this.http
-      .patch('http://localhost:6143/users', {
+    this.userService
+      .patchUser({
         username: this.user.username,
         roles: updatedRoles,
       })
-      .subscribe((res) => console.log(res));
+      .subscribe((res) => {
+        return;
+      });
   }
 
   async deleteUser(): Promise<void> {
@@ -53,12 +56,10 @@ export class UserCardComponent implements OnInit {
         {
           text: 'Okay',
           handler: () => {
-            this.http
-              .delete('http://localhost:6143/users/' + this.user.username)
-              .subscribe((res) => {
-                console.log(res);
-                location.reload();
-              });
+            this.userService.deleteUser(this.user.username).subscribe((res) => {
+              console.log(res);
+              location.reload();
+            });
           },
         },
       ],
