@@ -42,4 +42,13 @@ export class HttpService {
 
     return this.http.delete(url, options);
   }
+
+  put(apiUrl: string, data: any) {
+    const headers = new HttpHeaders('Content-Type: application/json');
+    const options = { headers: headers, withCredentials: false };
+
+    const url = apiUrl;
+
+    return this.http.patch(url, JSON.stringify(data), options);
+  }
 }
