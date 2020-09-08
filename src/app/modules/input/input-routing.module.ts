@@ -24,7 +24,7 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       {
-        path: 'scorecard',
+        path: 'scorecard/:scId',
         loadChildren: () =>
           import('./pages/scorecard/scorecard.module').then(
             (m) => m.ScorecardPageModule

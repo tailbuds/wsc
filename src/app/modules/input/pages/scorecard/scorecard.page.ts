@@ -1,6 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { Facility } from 'src/app/shared/models/facility.model';
 import { IonSlides } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { ScorecardService } from '../../../../shared/services/scorecard.service';
+import { Scorecard } from '../../../../shared/models/scorecard.model';
 
 @Component({
   selector: 'app-scorecard',
@@ -10,7 +14,14 @@ import { IonSlides } from '@ionic/angular';
 export class ScorecardPage implements OnInit {
   title: string;
 
-  constructor() {
+  scorecard: Scorecard;
+
+  private routeSub: Subscription;
+
+  constructor(
+    private route: ActivatedRoute,
+    private scService: ScorecardService
+  ) {
     this.title = 'Scorecard';
   }
 
@@ -47,5 +58,15 @@ export class ScorecardPage implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.initialFormFill();
+  }
+
+  async initialFormFill() {
+    this.routeSub = await this.route.params.subscribe((params) => {
+      this.scService.getScorecard(params.scId).subscribe((res: Scorecard) => {
+        this.scorecard = res;
+      });
+    });
+  }
 }

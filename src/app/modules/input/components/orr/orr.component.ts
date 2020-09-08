@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Scorecard } from 'src/app/shared/models/scorecard.model';
 
 @Component({
   selector: 'app-orr',
@@ -6,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orr.component.scss'],
 })
 export class OrrComponent implements OnInit {
+  @Input() scorecard: Scorecard;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }

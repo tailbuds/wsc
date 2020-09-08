@@ -7,8 +7,7 @@
       <form>
         <ion-item>
           <ion-label color="primary">Gender</ion-label>
-          <ion-select interface="action-sheet" ngModel name="gender" #gender (ionChange)=log(gender)
-            placeholder="Select One">
+          <ion-select interface="action-sheet" [ngModel]="gender" name="gender" #gender placeholder="Select One">
             <ion-select-option value="male">Male</ion-select-option>
             <ion-select-option value="female">Female</ion-select-option>
             <ion-select-option value="others">Others</ion-select-option>
@@ -16,8 +15,7 @@
         </ion-item>
         <ion-item>
           <ion-label color="primary">Age Range</ion-label>
-          <ion-select interface="action-sheet" ngModel name="ageRange" #ageRange (ionChange)=log(ageRange)
-            placeholder="Select One">
+          <ion-select interface="action-sheet" [ngModel]="ageRange" name="ageRange" #ageRange placeholder="Select One">
             <ion-select-option value="less than 30">Less than 30 Years</ion-select-option>
             <ion-select-option value="30-45">30-45 Years</ion-select-option>
             <ion-select-option value="45-55">45-55 Years</ion-select-option>
@@ -28,7 +26,7 @@
         </ion-item>
         <ion-item>
           <ion-label color="primary">Nationality Type</ion-label>
-          <ion-select interface="action-sheet" ngModel name="nationality" #nationality (ionChange)=log(nationality)
+          <ion-select interface="action-sheet" [ngModel]="nationality" name="nationality" #nationality
             placeholder="Select One">
             <ion-select-option value="omani">Omani</ion-select-option>
             <ion-select-option value="expat">Expat</ion-select-option>
