@@ -10,9 +10,7 @@ import { ScorecardService } from 'src/app/shared/services/scorecard.service';
 })
 export class InputPage implements OnInit {
   scorecardTab: string;
-
-  scId: string;
-
+  
   constructor(
     private scService: ScorecardService,
     public modalCtrl: ModalController
