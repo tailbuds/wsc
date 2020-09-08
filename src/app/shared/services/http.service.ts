@@ -9,6 +9,7 @@ export class HttpService {
 
   post(apiUrl: string, data: any) {
     const headers = new HttpHeaders('Content-Type: application/json');
+    // tslint:disable-next-line: object-literal-shorthand
     const options = { headers: headers, withCredentials: false };
 
     const url = apiUrl;
@@ -18,6 +19,7 @@ export class HttpService {
 
   get(apiUrl: string) {
     const headers = new HttpHeaders();
+    // tslint:disable-next-line: object-literal-shorthand
     const options = { headers: headers, withCredentials: false };
 
     const url = apiUrl;
@@ -27,7 +29,7 @@ export class HttpService {
 
   patch(apiUrl: string, data: any) {
     const headers = new HttpHeaders('Content-Type: application/json');
-    const options = { headers: headers, withCredentials: false };
+    const options = { headers, withCredentials: false };
 
     const url = apiUrl;
 
@@ -36,10 +38,19 @@ export class HttpService {
 
   delete(apiUrl: string) {
     const headers = new HttpHeaders();
-    const options = { headers: headers, withCredentials: false };
+    const options = { headers, withCredentials: false };
 
     const url = apiUrl;
 
     return this.http.delete(url, options);
+  }
+
+  put(apiUrl: string, data: any) {
+    const headers = new HttpHeaders('Content-Type: application/json');
+    const options = { headers: headers, withCredentials: false };
+
+    const url = apiUrl;
+
+    return this.http.patch(url, JSON.stringify(data), options);
   }
 }

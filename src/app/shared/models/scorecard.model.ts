@@ -5,17 +5,26 @@ export class Customer {
   wtdAvgFacilityScore: number;
   facilities: Array<Facility>;
   id: string;
+  ageRange: string;
+  gender: string;
+  nationality: string;
 
   constructor(
     name: string,
     id: string,
     wtdAvgFacilityScore: number = 0,
-    facilities: Array<Facility> = []
+    facilities: Array<Facility> = [],
+    ageRange: string,
+    gender: string,
+    nationality: string
   ) {
     this.name = name;
     this.id = id;
     this.wtdAvgFacilityScore = wtdAvgFacilityScore;
     this.facilities = facilities;
+    this.ageRange = ageRange;
+    this.gender = gender;
+    this.nationality = nationality;
   }
 }
 

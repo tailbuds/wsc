@@ -9,10 +9,10 @@
     <app-basic-customer-details></app-basic-customer-details>
     <ion-slides #scorecardSlides pager="true" [options]="slideOpts" #sliders (ionSlideDidChange)="checkSlide()">
         <ion-slide>
-            <app-getting-started class="width-80"></app-getting-started>
+            <app-getting-started class="width-80" [scorecard]="scorecard"></app-getting-started>
         </ion-slide>
         <ion-slide>
-            <app-orr class="width-80"></app-orr>
+            <app-orr class="width-80" [scorecard]="scorecard"></app-orr>
         </ion-slide>
         <ion-slide>
             <div class="column-flex">
@@ -27,10 +27,10 @@
             </div>
         </ion-slide>
         <ion-slide>
-            <app-corporate-guarantee class="width-80"></app-corporate-guarantee>
+            <app-corporate-guarantee class="width-80" [scorecard]="scorecard"></app-corporate-guarantee>
         </ion-slide>
         <ion-slide>
-            <app-support-documents class="width-80"></app-support-documents>
+            <app-support-documents class="width-80" [scorecard]="scorecard"></app-support-documents>
         </ion-slide>
     </ion-slides>
 </ion-content>
