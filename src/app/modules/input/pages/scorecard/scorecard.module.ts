@@ -9,7 +9,7 @@ import { ScorecardPageRoutingModule } from './scorecard-routing.module';
 
 import { ScorecardPage } from './scorecard.page';
 import { FacilityFormComponent } from '../../components/facility-form/facility-form.component';
-import { BasicCustomerDetailsComponent } from '../../components/basic-customer-details/basic-customer-details.component';
+import { BasicCustomerDetailsModule } from '../../components/basic-customer-details/basic-customer-details.module';
 import { SupportDocumentsComponent } from '../../components/support-documents/support-documents.component';
 import { CorporateGuaranteeComponent } from '../../components/corporate-guarantee/corporate-guarantee.component';
 import { OrrComponent } from '../../components/orr/orr.component';
@@ -23,11 +23,11 @@ import { GettingStartedComponent } from '../../components/getting-started/gettin
     ScorecardPageRoutingModule,
     ReactiveFormsModule,
     ComponentsModule,
+    BasicCustomerDetailsModule,
   ],
   declarations: [
     ScorecardPage,
     FacilityFormComponent,
-    BasicCustomerDetailsComponent,
     SupportDocumentsComponent,
     CorporateGuaranteeComponent,
     OrrComponent,

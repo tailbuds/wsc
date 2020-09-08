@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Scorecard } from 'src/app/shared/models/scorecard.model';
 
 @Component({
   selector: 'app-support-documents',
@@ -6,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./support-documents.component.scss'],
 })
 export class SupportDocumentsComponent implements OnInit {
+  @Input() scorecard: Scorecard;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }

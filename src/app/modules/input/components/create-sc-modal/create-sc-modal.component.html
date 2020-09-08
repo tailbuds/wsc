@@ -1,0 +1,10 @@
+<ion-buttons slot="end">
+  <ion-button (click)="dismissModal()">Close</ion-button>
+</ion-buttons>
+
+<app-basic-customer-details (scoreCardData)="acceptData($event)"></app-basic-customer-details>
+
+<ion-button shape="round" (click)="createSc()">
+  Create new scorecard
+  <ion-icon slot="end" name="create-outline"></ion-icon>
+</ion-button>
