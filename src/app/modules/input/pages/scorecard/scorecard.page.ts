@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Facility } from 'src/app/shared/models/facility.model';
 import { IonSlides } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
