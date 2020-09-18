@@ -2,29 +2,45 @@ import { Facility } from './facility.model';
 
 export class Customer {
   name: string;
-  wtdAvgFacilityScore: number;
-  facilities: Array<Facility>;
   id: string;
-  ageRange: string;
+  facilities: Array<Facility>;
+  networth: object;
+  bcsb: object;
   gender: string;
-  nationality: string;
+  ageRange: string;
+  nationalityType: string;
+  repaymentSource: string;
+  proposedLimit: string;
+  dpdOneYear: string;
+  relationYears: string;
+  businessYears: string;
+  supportDocumentsFile: string;
+  new: boolean;
+  internalNetworthLimitRatio: string;
+  totalNetworthLimitRatio: string;
+  wtdAvgFacilityScore: number;
+  limitCheck: boolean;
 
-  constructor(
-    name: string,
-    id: string,
-    wtdAvgFacilityScore: number = 0,
-    facilities: Array<Facility> = [],
-    ageRange: string,
-    gender: string,
-    nationality: string
-  ) {
-    this.name = name;
-    this.id = id;
-    this.wtdAvgFacilityScore = wtdAvgFacilityScore;
-    this.facilities = facilities;
-    this.ageRange = ageRange;
-    this.gender = gender;
-    this.nationality = nationality;
+  constructor(customer: Customer) {
+    this.name = customer.name;
+    this.id = customer.id;
+    this.facilities = customer.facilities;
+    this.networth = customer.networth;
+    this.bcsb = customer.bcsb;
+    this.gender = customer.gender;
+    this.ageRange = customer.ageRange;
+    this.nationalityType = customer.nationalityType;
+    this.repaymentSource = customer.repaymentSource;
+    this.proposedLimit = customer.proposedLimit;
+    this.dpdOneYear = customer.dpdOneYear;
+    this.relationYears = customer.relationYears;
+    this.businessYears = customer.businessYears;
+    this.supportDocumentsFile = customer.supportDocumentsFile;
+    this.new = customer.new;
+    this.internalNetworthLimitRatio = customer.internalNetworthLimitRatio;
+    this.totalNetworthLimitRatio = customer.totalNetworthLimitRatio;
+    this.wtdAvgFacilityScore = customer.wtdAvgFacilityScore;
+    this.limitCheck = customer.limitCheck;
   }
 }
 
@@ -33,12 +49,24 @@ export class Scorecard {
   customer: Customer;
   orr: number;
   status: string;
-  // id: string, customer: Customer, orr: number, status: string
+  maker: object;
+  approver: object;
+  orrGrade: object;
+  expiryDt: string;
+  createdAt: string;
+  updatedAt: string;
+
   constructor(sc: Scorecard) {
     this.id = sc.id;
     this.customer = sc.customer;
     this.orr = sc.orr;
     this.status = sc.status;
+    this.maker = sc.maker;
+    this.approver = sc.approver;
+    this.orrGrade = sc.orrGrade;
+    this.expiryDt = sc.expiryDt;
+    this.createdAt = sc.createdAt;
+    this.updatedAt = sc.updatedAt;
   }
 
   public orrColor(): string {
