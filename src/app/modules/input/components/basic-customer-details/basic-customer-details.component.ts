@@ -13,17 +13,22 @@ export class BasicCustomerDetailsComponent implements OnInit {
   @Input() customerName: string;
   @Input() customerId: string;
   @Input() customerNew: boolean;
-  @Input() expiryDt: Date;
+  @Input() expiryDt: string;
+  expiryDate: string;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.expiryDt) {
+      this.expiryDate = this.expiryDt.split('T')[0];
+    }
+  }
 
   submitData(
     customerName: string,
     customerId: string,
     newCustomer: boolean,
-    expiryDt: Date
+    expiryDt: string
   ): void {
     if (customerName && customerId && newCustomer && expiryDt) {
       const scoreCardData = {
