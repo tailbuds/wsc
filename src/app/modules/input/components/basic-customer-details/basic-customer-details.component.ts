@@ -10,6 +10,11 @@ export class BasicCustomerDetailsComponent implements OnInit {
   @Input() scorecard: Scorecard;
   @Output() scoreCardData: EventEmitter<object> = new EventEmitter();
 
+  @Input() customerName: string;
+  @Input() customerId: string;
+  @Input() customerNew: boolean;
+  @Input() expiryDt: Date;
+
   constructor() {}
 
   ngOnInit() {}
@@ -17,9 +22,10 @@ export class BasicCustomerDetailsComponent implements OnInit {
   submitData(
     customerName: string,
     customerId: string,
-    newCustomer: boolean
+    newCustomer: boolean,
+    expiryDt: Date
   ): void {
-    if (customerName && customerId && newCustomer) {
+    if (customerName && customerId && newCustomer && expiryDt) {
       const scoreCardData = {
         customer: {
           name: customerName,
@@ -36,6 +42,7 @@ export class BasicCustomerDetailsComponent implements OnInit {
         maker: {
           user: '5f368cefb6c22c312c2376f1',
         },
+        expiryDt: expiryDt,
       };
       this.scoreCardData.emit(scoreCardData);
     }

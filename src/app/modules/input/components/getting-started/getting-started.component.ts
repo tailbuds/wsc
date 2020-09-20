@@ -8,7 +8,7 @@ import { Scorecard } from '../../../../shared/models/scorecard.model';
 })
 export class GettingStartedComponent implements OnInit {
   @Input() scorecard: Scorecard;
-
+  @Input() scorecardDictionary: object;
   ageRange: string;
   gender: string;
   nationality: string;

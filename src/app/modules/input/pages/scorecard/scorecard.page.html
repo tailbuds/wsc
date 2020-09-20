@@ -6,13 +6,16 @@
     <ion-button *ngIf="!end" fill="clear" id="right-arrow" (click)="nextSlide()">
         <ion-icon name="arrow-forward-outline"></ion-icon>
     </ion-button>
-    <app-basic-customer-details></app-basic-customer-details>
+    <app-basic-customer-details *ngIf="scorecard" [customerName]="scorecard.customer.name"
+        [customerId]="scorecard.customer.id" [customerNew]="scorecard.customer.new" [expiryDt]="scorecard.expiryDt">
+    </app-basic-customer-details>
     <ion-slides #scorecardSlides pager="true" [options]="slideOpts" #sliders (ionSlideDidChange)="checkSlide()">
         <ion-slide>
-            <app-getting-started class="width-80" [scorecard]="scorecard"></app-getting-started>
+            <app-getting-started class="width-80" [scorecardDictionary]="scorecardDictionary" [scorecard]="scorecard">
+            </app-getting-started>
         </ion-slide>
         <ion-slide>
-            <app-orr class="width-80" [scorecard]="scorecard"></app-orr>
+            <app-orr class="width-80" [scorecardDictionary]="scorecardDictionary" [scorecard]="scorecard"></app-orr>
         </ion-slide>
         <ion-slide>
             <div class="column-flex">

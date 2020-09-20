@@ -8,7 +8,7 @@ import { Scorecard } from 'src/app/shared/models/scorecard.model';
 })
 export class OrrComponent implements OnInit {
   @Input() scorecard: Scorecard;
-
+  @Input() scorecardDictionary: object;
   constructor() {}
 
   ngOnInit() {}
