@@ -6,8 +6,7 @@
     <ion-button *ngIf="!end" fill="clear" id="right-arrow" (click)="nextSlide()">
         <ion-icon name="arrow-forward-outline"></ion-icon>
     </ion-button>
-    <app-basic-customer-details *ngIf="scorecard" [customerName]="scorecard.customer.name"
-        [customerId]="scorecard.customer.id" [customerNew]="scorecard.customer.new" [expiryDt]="scorecard.expiryDt">
+    <app-basic-customer-details *ngIf="scorecard" [scorecard]="scorecard">
     </app-basic-customer-details>
     <ion-slides #scorecardSlides pager="true" [options]="slideOpts" #sliders (ionSlideDidChange)="checkSlide()">
         <ion-slide>

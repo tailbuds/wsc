@@ -9,18 +9,18 @@ import { Scorecard } from 'src/app/shared/models/scorecard.model';
 export class BasicCustomerDetailsComponent implements OnInit {
   @Input() scorecard: Scorecard;
   @Output() scoreCardData: EventEmitter<object> = new EventEmitter();
-
-  @Input() customerName: string;
-  @Input() customerId: string;
-  @Input() customerNew: boolean;
-  @Input() expiryDt: string;
   expiryDate: string;
-
+  customerNew: boolean;
+  scorecardId: string;
+  customerName: string;
   constructor() {}
 
   ngOnInit() {
-    if (this.expiryDt) {
-      this.expiryDate = this.expiryDt.split('T')[0];
+    if (this.scorecard) {
+      this.expiryDate = this.scorecard.expiryDt.split('T')[0];
+      this.customerNew = this.scorecard.customer.new;
+      this.scorecardId = this.scorecard.customer.id;
+      this.customerName = this.scorecard.customer.name;
     }
   }
 

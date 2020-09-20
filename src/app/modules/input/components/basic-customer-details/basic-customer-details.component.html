@@ -27,7 +27,7 @@
   </ion-radio-group>
   <ion-item>
     <ion-label position="floating" color="primary">Civil ID/Passport No | CIF</ion-label>
-    <ion-input [value]="customerId" name="id" #id type="text"
+    <ion-input [value]="scorecardId" name="id" #id type="text"
       (ionChange)="submitData(name.value, id.value, newCustomer.value,expiryDt.value)" debounce="500"></ion-input>
     <ion-label position="floating" color="primary">Expiry Date</ion-label>
   </ion-item>
@@ -38,3 +38,45 @@
     </ion-input>
   </ion-item>
 </div>
+
+<!-- 
+<ion-item class="row-flex zero-margin">
+  <ion-text color="medium"><small>All fields are compulsory</small></ion-text>
+</ion-item>
+<div class="row-flex">
+  <ion-item>
+    <ion-label position="floating" color="primary">Customer Name</ion-label>
+    <ion-input [value]="customerName" name="name" #name
+      (ionChange)="submitData(name.value, id.value, newCustomer.value,expiryDt.value)" debounce="600" type="text">
+    </ion-input>
+  </ion-item>
+  <ion-radio-group value={{customerNew}} name="new" #newCustomer
+    (ionChange)="submitData(name.value, id.value, newCustomer.value,expiryDt.value)">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-radio value="false"></ion-radio>
+          <ion-label color="primary">Existing</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-radio value="true"></ion-radio>
+          <ion-label color="primary">New Customer</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-radio-group>
+  <ion-item>
+    <ion-label position="floating" color="primary">Civil ID/Passport No | CIF</ion-label>
+    <ion-input [value]="customerId" name="id" #id type="text"
+      (ionChange)="submitData(name.value, id.value, newCustomer.value,expiryDt.value)" debounce="500"></ion-input>
+    <ion-label position="floating" color="primary">Expiry Date</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="primary">Expiry Date</ion-label>
+    <ion-input [value]="expiryDate" name="expiryDt" #expiryDt type="Date"
+      (ionChange)="submitData(name.value, id.value, newCustomer.value,expiryDt.value)" debounce="500">
+    </ion-input>
+  </ion-item>
+</div> -->
