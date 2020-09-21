@@ -7,7 +7,8 @@
       <form>
         <ion-item>
           <ion-label color="primary">Gender</ion-label>
-          <ion-select interface="action-sheet" [ngModel]="gender" name="gender" #gender placeholder="Select One">
+          <ion-select *ngIf="scorecardDictionary && scorecard" interface="action-sheet" [ngModel]="gender" name="gender"
+            #gender placeholder="Select One" [selectedText]="scorecard.customer.gender">
             <ion-select-option value="male">Male</ion-select-option>
             <ion-select-option value="female">Female</ion-select-option>
             <ion-select-option value="others">Others</ion-select-option>
@@ -15,8 +16,8 @@
         </ion-item>
         <ion-item>
           <ion-label color="primary">Age Range</ion-label>
-          <ion-select *ngIf="scorecardDictionary" interface="action-sheet" [ngModel]="ageRange" name="ageRange"
-            #ageRange placeholder="Select One">
+          <ion-select *ngIf="scorecardDictionary && scorecard" [selectedText]="scorecard.customer.ageRange"
+            interface="action-sheet" [ngModel]="ageRange" name="ageRange" #ageRange placeholder="Select One">
             <ion-select-option *ngFor="let ageRange of scorecardDictionary.obligorScores.ageRange"
               value={{ageRange.value}}>{{ageRange._id+" Years" | titlecase}}</ion-select-option>
           </ion-select>
@@ -24,10 +25,11 @@
         </ion-item>
         <ion-item>
           <ion-label color="primary">Nationality Type</ion-label>
-          <ion-select *ngIf="scorecardDictionary" interface="action-sheet" [ngModel]="nationality" name="nationality"
-            #nationality placeholder="Select One">
+          <ion-select *ngIf="scorecardDictionary && scorecard" interface="action-sheet" [ngModel]="nationality"
+            name="nationality" #nationality placeholder="Select One"
+            [selectedText]="scorecard.customer.nationalityType">
             <ion-select-option *ngFor="let nationality of scorecardDictionary.obligorScores.nationality"
-              value={{nationality.value}}>
+              [value]="nationality.value">
               {{nationality._id | titlecase }}</ion-select-option>
           </ion-select>
 
@@ -36,42 +38,3 @@
     </ion-card-content>
   </div>
 </ion-card>
-
-
-<!-- <ion-card>
-  <div class="margin">
-    <ion-card-header>
-      <ion-card-title color="primary"> Getting started <sup>(step 1 of 5)</sup> </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <form>
-        <ion-item>
-          <ion-label color="primary">Gender</ion-label>
-          <ion-select interface="action-sheet" [ngModel]="gender" name="gender" #gender placeholder="Select One">
-            <ion-select-option value="male">Male</ion-select-option>
-            <ion-select-option value="female">Female</ion-select-option>
-            <ion-select-option value="others">Others</ion-select-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label color="primary">Age Range</ion-label>
-          <ion-select interface="action-sheet" [ngModel]="ageRange" name="ageRange" #ageRange placeholder="Select One">
-            <ion-select-option *ngFor="let ageRange of scorecardDictionary.obligorScores.ageRange"
-              value={{ageRange.value}}>{{ageRange._id+" Years" | titlecase}}</ion-select-option>
-          </ion-select>
-
-        </ion-item>
-        <ion-item>
-          <ion-label color="primary">Nationality Type</ion-label>
-          <ion-select interface="action-sheet" [ngModel]="nationality" name="nationality" #nationality
-            placeholder="Select One">
-            <ion-select-option *ngFor="let nationality of scorecardDictionary.obligorScores.nationality"
-              value={{nationality.value}}>
-              {{nationality._id | titlecase }}</ion-select-option>
-          </ion-select>
-
-        </ion-item>
-      </form>
-    </ion-card-content>
-  </div>
-</ion-card> -->

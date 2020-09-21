@@ -9,15 +9,8 @@ import { Scorecard } from '../../../../shared/models/scorecard.model';
 export class GettingStartedComponent implements OnInit {
   @Input() scorecard: Scorecard;
   @Input() scorecardDictionary: object;
-  ageRange: string;
-  gender: string;
-  nationality: string;
 
   constructor() {}
 
-  ngOnInit() {
-    // this.ageRange = this.scorecard.customer.ageRange;
-    // this.gender = this.scorecard.customer.gender;
-    // this.nationality = this.scorecard.customer.nationality;
-  }
+  ngOnInit() {}
 }
