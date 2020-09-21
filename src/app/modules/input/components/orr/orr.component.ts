@@ -7,9 +7,18 @@ import { Scorecard } from 'src/app/shared/models/scorecard.model';
   styleUrls: ['./orr.component.scss'],
 })
 export class OrrComponent implements OnInit {
-  @Input() scorecard: Scorecard;
+  @Input() scorecard: any;
   @Input() scorecardDictionary: object;
+  networthvalue: string;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    setTimeout(() => {
+      if (this.scorecard) {
+        this.networthvalue = this.scorecard.customer.networth.value;
+
+        console.log(this.networthvalue);
+      }
+    }, 500);
+  }
 }
