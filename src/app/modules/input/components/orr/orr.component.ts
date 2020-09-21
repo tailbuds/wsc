@@ -10,14 +10,16 @@ export class OrrComponent implements OnInit {
   @Input() scorecard: any;
   @Input() scorecardDictionary: object;
   networthvalue: string;
+  proposedLimit: string;
+  totalLimit: string;
   constructor() {}
 
   ngOnInit() {
     setTimeout(() => {
       if (this.scorecard) {
         this.networthvalue = this.scorecard.customer.networth.value;
-
-        console.log(this.networthvalue);
+        this.proposedLimit = this.scorecard.customer.proposedLimit;
+        this.totalLimit = this.scorecard.customer.bcsb.totalExistingLimit;
       }
     }, 500);
   }
