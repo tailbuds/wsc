@@ -5,10 +5,12 @@
         <ion-card-title color="primary"> ORR <sup>(step 2 of 5)</sup> </ion-card-title>
       </ion-card-header>
       <form>
+
         <ion-item>
+
           <ion-label color="primary" position="floating">Net Worth(OMR '000)</ion-label>
-          <ion-input *ngIf="scorecard" [value]="networthvalue" ngModel name="netWorthValue" #netWorthValue
-            (change)=log(netWorthValue) type="text" inputmode="numeric">
+          <ion-input *ngIf="scorecard" [value]="networthvalue" ngModel name=" netWorthValue" #netWorthValue
+            (ionChange)="sendNetWorth(netWorthValue.value)" debounce=3000 type="number" inputmode="numeric">
           </ion-input>
         </ion-item>
         <ion-item>
@@ -17,30 +19,30 @@
             interface="action-sheet" ngModel name="supportDocuments" #supportDocuments (ionChange)=log(supportDocuments)
             placeholder="Select One">
             <ion-select-option *ngFor="let netWorth of scorecardDictionary.obligorScores.networthSupport"
-              value={{netWorth.value}}>{{netWorth._id | titlecase}}</ion-select-option>
+              value={{netWorth._id}}>{{netWorth._id | titlecase}}</ion-select-option>
 
           </ion-select>
         </ion-item>
         <ion-item>
           <ion-label color="primary">Repayment Source</ion-label>
           <ion-select *ngIf="scorecardDictionary && scorecard" [selectedText]="scorecard.customer.repaymentSource"
-            interface="action-sheet" ngModel name="repaymentSource" #repaymentSource (ionChange)=log(repaymentSource)
-            placeholder="Select One">
+            interface="action-sheet" ngModel name="repaymentSource" #repaymentSource
+            (ionChange)='sendrepaymentSource(repaymentSource.value)' placeholder="Select One">
             <ion-select-option *ngFor="let repaymentSource of scorecardDictionary.obligorScores.repaymentSource"
-              value={{repaymentSource.value}}>
+              value={{repaymentSource._id}}>
               {{repaymentSource._id | titlecase}}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
           <ion-label color="primary" position="floating">Proposed total limit(OMR '000)</ion-label>
           <ion-input *ngIf="scorecard" [value]="proposedLimit" ngModel name="proposedTotalLimit" #proposedTotalLimit
-            (change)=log(proposedTotalLimit) type="text" inputmode="numeric"> </ion-input>
+            (ionChange)="log(proposedTotalLimit)" debounce=3000 type="number" inputmode="numeric"> </ion-input>
         </ion-item>
         <ion-item>
           <ion-label color="primary" position="floating">Total Existing Limit in all banks-BCSB (OMR '000)
           </ion-label>
           <ion-input *ngIf="scorecardDictionary && scorecard" [value]="totalLimit" ngModel name="totalExistingLimit"
-            #totalExistingLimit (change)=log(totalExistingLimit) type="text" inputmode="numeric">
+            #totalExistingLimit (ionChange)="log(totalExistingLimit)" debounce=3000 type="number" inputmode="numeric">
           </ion-input>
         </ion-item>
         <ion-item>
@@ -49,7 +51,7 @@
             interface="action-sheet" ngModel name="bcsbStatus" #bcsbStatus (ionChange)=log(bcsbStatus)
             placeholder="Select One">
             <ion-select-option *ngFor="let individualStatus of scorecardDictionary.obligorScores.individualStatus"
-              value={{individualStatus.value}}>
+              value={{individualStatus._id}}>
               {{individualStatus._id | titlecase}}</ion-select-option>
           </ion-select>
 
@@ -62,7 +64,7 @@
             placeholder="Select One">
             <ion-select-option
               *ngFor="let relatedCompaniesStatus of scorecardDictionary.obligorScores.relatedCompaniesStatus"
-              value={{relatedCompaniesStatus.value}}>
+              value={{relatedCompaniesStatus._id}}>
               {{relatedCompaniesStatus._id | titlecase}}</ion-select-option>
           </ion-select>
 
@@ -71,30 +73,30 @@
           <ion-label color="primary">Delinquency History of customer in the past 1 year(MAX DPD Qualify)
           </ion-label>
           <ion-select *ngIf="scorecardDictionary && scorecard" [selectedText]="scorecard.customer.dpdOneYear"
-            interface="action-sheet" ngModel name="oneYearDpd" #oneYearDpd (ionChange)=log(oneYearDpd)
+            interface="action-sheet" ngModel name="oneYearDpd" #oneYearDpd (ionChange)="sendOneYearDpd(oneYearDpd._id)"
             placeholder="Select One">
             <ion-select-option *ngFor="let oneYearDpd of scorecardDictionary.obligorScores.oneYearDpd"
-              value={{oneYearDpd.value}}>
+              value={{oneYearDpd._id}}>
               {{oneYearDpd._id | titlecase}}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
           <ion-label color="primary">Alizz Customer Relationship in years</ion-label>
           <ion-select *ngIf="scorecardDictionary && scorecard" [selectedText]="scorecard.customer.relationYears"
-            interface="action-sheet" ngModel name="relationYears" #relationYears (ionChange)=log(relationYears)
-            placeholder="Select One">
+            interface="action-sheet" ngModel name="relationYears" #relationYears
+            (ionChange)='sendRelationYears(relationYears.value)' placeholder="Select One">
             <ion-select-option *ngFor="let relationYears of scorecardDictionary.obligorScores.relationYears"
-              value={{relationYears.value}}>
+              value={{relationYears._id}}>
               {{relationYears._id+" Years" | titlecase}}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
           <ion-label color="primary">Years in Business</ion-label>
           <ion-select *ngIf="scorecardDictionary && scorecard" [selectedText]="scorecard.customer.businessYears"
-            interface="action-sheet" ngModel name="businessYears" #businessYears (ionChange)=log(businessYears)
-            placeholder="Select One">
+            interface="action-sheet" ngModel name="businessYears" #businessYears
+            (ionChange)='sendBusinessYears(businessYears.value)' placeholder="Select One">
             <ion-select-option *ngFor="let businessYears of scorecardDictionary.obligorScores.businessYears"
-              value={{businessYears.value}}>
+              value={{businessYears._id}}>
               {{businessYears._id+" Years" | titlecase}}</ion-select-option>
           </ion-select>
         </ion-item>

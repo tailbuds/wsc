@@ -29,7 +29,8 @@ export class HttpService {
 
   patch(apiUrl: string, data: any) {
     const headers = new HttpHeaders('Content-Type: application/json');
-    const options = { headers, withCredentials: false };
+    // tslint:disable-next-line: object-literal-shorthand
+    const options = { headers: headers, withCredentials: false };
 
     const url = apiUrl;
 

@@ -31,7 +31,7 @@ export class ScorecardService {
   ): Observable<any> {
     if (child) {
       return this.http.patch(
-        `http://localhost:6143/scorecards?id=${id}?parent=${parent}?child=${child}`,
+        `http://localhost:6143/scorecards?id=${id}&parent=${parent}&child=${child}`,
         data
       );
     } else {
