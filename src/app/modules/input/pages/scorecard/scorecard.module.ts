@@ -1,5 +1,5 @@
 import { ComponentsModule } from './../../../../shared/components/components.module';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -33,5 +33,6 @@ import { GettingStartedComponent } from '../../components/getting-started/gettin
     OrrComponent,
     GettingStartedComponent,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ScorecardPageModule {}

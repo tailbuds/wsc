@@ -7,7 +7,8 @@
       <form>
         <ion-item>
           <ion-label color="primary">Gender</ion-label>
-          <ion-select interface="action-sheet" [ngModel]="gender" name="gender" #gender placeholder="Select One">
+          <ion-select *ngIf="scorecardDictionary && scorecard" interface="action-sheet" [ngModel]="gender" name="gender"
+            #gender placeholder="Select One" [selectedText]="scorecard.customer.gender">
             <ion-select-option value="male">Male</ion-select-option>
             <ion-select-option value="female">Female</ion-select-option>
             <ion-select-option value="others">Others</ion-select-option>
@@ -15,23 +16,23 @@
         </ion-item>
         <ion-item>
           <ion-label color="primary">Age Range</ion-label>
-          <ion-select interface="action-sheet" [ngModel]="ageRange" name="ageRange" #ageRange placeholder="Select One">
-            <ion-select-option value="less than 30">Less than 30 Years</ion-select-option>
-            <ion-select-option value="30-45">30-45 Years</ion-select-option>
-            <ion-select-option value="45-55">45-55 Years</ion-select-option>
-            <ion-select-option value="55-65">55-65 Years</ion-select-option>
-            <ion-select-option value="65-70">65-70 Years</ion-select-option>
-            <ion-select-option value="more than 70">More than 70 Years</ion-select-option>
+          <ion-select *ngIf="scorecardDictionary && scorecard" [selectedText]="scorecard.customer.ageRange"
+            interface="action-sheet" [ngModel]="ageRange" name="ageRange" #ageRange placeholder="Select One">
+            <ion-select-option *ngFor="let ageRange of scorecardDictionary.obligorScores.ageRange"
+              value={{ageRange.value}}>{{ageRange._id+" Years" | titlecase}}</ion-select-option>
           </ion-select>
+
         </ion-item>
         <ion-item>
           <ion-label color="primary">Nationality Type</ion-label>
-          <ion-select interface="action-sheet" [ngModel]="nationality" name="nationality" #nationality
-            placeholder="Select One">
-            <ion-select-option value="omani">Omani</ion-select-option>
-            <ion-select-option value="expat">Expat</ion-select-option>
-            <ion-select-option value="gcc">GCC</ion-select-option>
+          <ion-select *ngIf="scorecardDictionary && scorecard" interface="action-sheet" [ngModel]="nationality"
+            name="nationality" #nationality placeholder="Select One"
+            [selectedText]="scorecard.customer.nationalityType">
+            <ion-select-option *ngFor="let nationality of scorecardDictionary.obligorScores.nationality"
+              [value]="nationality.value">
+              {{nationality._id | titlecase }}</ion-select-option>
           </ion-select>
+
         </ion-item>
       </form>
     </ion-card-content>

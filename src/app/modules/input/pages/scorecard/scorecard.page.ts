@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ScorecardService } from '../../../../shared/services/scorecard.service';
 import { Scorecard } from '../../../../shared/models/scorecard.model';
+import { ScoreDictionaryService } from 'src/app/shared/services/score-dictionary.service';
 
 @Component({
   selector: 'app-scorecard',
@@ -19,7 +20,7 @@ import { Scorecard } from '../../../../shared/models/scorecard.model';
 })
 export class ScorecardPage implements OnInit {
   title: string;
-
+  scorecardDictionary: object;
   scorecard: Scorecard;
 
   private routeSub: Subscription;
@@ -28,7 +29,8 @@ export class ScorecardPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private scService: ScorecardService
+    private scService: ScorecardService,
+    private sdServive: ScoreDictionaryService
   ) {
     this.title = 'Scorecard';
     this.scorecardTab.emit('scorecard');
@@ -69,10 +71,17 @@ export class ScorecardPage implements OnInit {
 
   ngOnInit() {
     this.initialFormFill();
+    this.getScoreDictionary();
   }
 
-  async initialFormFill() {
-    this.routeSub = await this.route.params.subscribe((params) => {
+  getScoreDictionary() {
+    this.sdServive.getScoreDictionary().subscribe((sd) => {
+      this.scorecardDictionary = sd;
+    });
+  }
+
+  initialFormFill() {
+    this.routeSub = this.route.params.subscribe((params) => {
       this.scService.getScorecard(params.scId).subscribe((res: Scorecard) => {
         this.scorecard = res;
       });

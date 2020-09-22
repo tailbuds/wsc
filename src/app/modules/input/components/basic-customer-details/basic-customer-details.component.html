@@ -4,11 +4,12 @@
 <div class="row-flex">
   <ion-item>
     <ion-label position="floating" color="primary">Customer Name</ion-label>
-    <ion-input name="name" #name (ionChange)="submitData(name.value, id.value, newCustomer.value)" debounce="600"
-      type="text">
+    <ion-input [value]="customerName" name="name" #name
+      (ionChange)="submitData(name.value, id.value, newCustomer.value,expiryDt.value)" debounce="600" type="text">
     </ion-input>
   </ion-item>
-  <ion-radio-group name="new" #newCustomer (ionChange)="submitData(name.value, id.value, newCustomer.value)">
+  <ion-radio-group value={{customerNew}} name="new" #newCustomer
+    (ionChange)="submitData(name.value, id.value, newCustomer.value,expiryDt.value)">
     <ion-row>
       <ion-col>
         <ion-item>
@@ -26,7 +27,13 @@
   </ion-radio-group>
   <ion-item>
     <ion-label position="floating" color="primary">Civil ID/Passport No | CIF</ion-label>
-    <ion-input name="id" #id type="text" (ionChange)="submitData(name.value, id.value, newCustomer.value)"
-      debounce="500"></ion-input>
+    <ion-input [value]="scorecardId" name="id" #id type="text"
+      (ionChange)="submitData(name.value, id.value, newCustomer.value,expiryDt.value)" debounce="500"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="primary">Expiry Date</ion-label>
+    <ion-input [value]="expiryDate" name="expiryDt" #expiryDt type="Date"
+      (ionChange)="submitData(name.value, id.value, newCustomer.value,expiryDt.value)" debounce="500">
+    </ion-input>
   </ion-item>
 </div>

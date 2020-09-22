@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonCustomScrollbarModule } from 'ion-custom-scrollbar';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     IonicModule.forRoot(),
     IonCustomScrollbarModule,
+    CommonModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
