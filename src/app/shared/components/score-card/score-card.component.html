@@ -37,7 +37,7 @@
       </div>
 
       <div class="row-flex">
-        <ion-button color="warning" size="medium">
+        <ion-button color="warning" size="medium" [routerLink]="['/input/scorecard', scorecard.id]">
           <ion-icon name="pencil-outline" style="color: #ffffff;"></ion-icon>
         </ion-button>
         <ion-button color="danger" size="medium" (click)="deleteSc()">
@@ -47,3 +47,5 @@
     </ion-card-content>
   </div>
 </ion-card>
+
+<!-- [routerLink]="'customer/'+customer.index" -->
