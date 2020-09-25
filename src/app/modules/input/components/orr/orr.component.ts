@@ -15,6 +15,8 @@ export class OrrComponent implements OnInit {
   totalLimit: string;
   constructor(private scService: ScorecardService) {}
 
+  log(value: any) {}
+
   getData() {
     if (this.scorecard) {
       this.networthvalue = this.scorecard.customer.networth.value;
@@ -26,6 +28,22 @@ export class OrrComponent implements OnInit {
     setTimeout(() => {
       this.getData();
     }, 500);
+  }
+
+  sendNetWorth(nValue: any) {
+    const data = {
+      customer: {
+        networth: {
+          value: nValue,
+        },
+      },
+    };
+    this.scService
+      .patchScorecard(this.scorecard.id, data, 'customer', 'networth', 'value')
+      .subscribe((res) => {
+        console.log(res);
+        this.scorecard.customer.networth.value = res.postUpdate;
+      });
   }
 
   sendrepaymentSource(value: any) {

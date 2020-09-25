@@ -27,16 +27,25 @@ export class ScorecardService {
     id: string,
     data: object,
     parent: string,
-    child?: string
+    child?: string,
+    subchild?: string
   ): Observable<any> {
-    if (child) {
+    if (parent && child && !subchild) {
       return this.http.patch(
         `http://localhost:6143/scorecards?id=${id}&parent=${parent}&child=${child}`,
         data
       );
-    } else {
+    }
+    if (parent && !child && !subchild) {
       return this.http.patch(
         `http://localhost:6143/scorecards?id=${id}?parent=${parent}`,
+        data
+      );
+    }
+
+    if (parent && child && subchild) {
+      return this.http.patch(
+        `http://localhost:6143/scorecards?id=${id}&parent=${parent}&child=${child}&subchild=${subchild}`,
         data
       );
     }

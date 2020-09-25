@@ -73,8 +73,8 @@
           <ion-label color="primary">Delinquency History of customer in the past 1 year(MAX DPD Qualify)
           </ion-label>
           <ion-select *ngIf="scorecardDictionary && scorecard" [selectedText]="scorecard.customer.dpdOneYear"
-            interface="action-sheet" ngModel name="oneYearDpd" #oneYearDpd (ionChange)="sendOneYearDpd(oneYearDpd._id)"
-            placeholder="Select One">
+            interface="action-sheet" ngModel name="oneYearDpd" #oneYearDpd
+            (ionChange)="sendOneYearDpd(oneYearDpd.value)" placeholder="Select One">
             <ion-select-option *ngFor="let oneYearDpd of scorecardDictionary.obligorScores.oneYearDpd"
               value={{oneYearDpd._id}}>
               {{oneYearDpd._id | titlecase}}</ion-select-option>
