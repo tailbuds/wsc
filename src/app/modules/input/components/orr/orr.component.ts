@@ -8,7 +8,7 @@ import { ScorecardService } from 'src/app/shared/services/scorecard.service';
   styleUrls: ['./orr.component.scss'],
 })
 export class OrrComponent implements OnInit {
-  @Input() scorecard: Scorecard;
+  @Input() scorecard: object;
   @Input() scorecardDictionary: object;
   networthvalue: string;
   proposedLimit: string;
@@ -100,6 +100,102 @@ export class OrrComponent implements OnInit {
       .subscribe((res) => {
         console.log(res);
         this.scorecard.customer.businessYears = res.postUpdate;
+      });
+  }
+
+  sendSupportDocuments(value: any) {
+    const data = {
+      customer: {
+        networth: {
+          document: value,
+        },
+      },
+    };
+    this.scService
+      .patchScorecard(
+        this.scorecard.id,
+        data,
+        'customer',
+        'networth',
+        'document'
+      )
+      .subscribe((res) => {
+        console.log(res);
+        this.scorecard.customer.networth.document = res.postUpdate;
+      });
+  }
+
+  sendProposedLimit(value: any) {
+    const data = {
+      customer: {
+        proposedLimit: value,
+      },
+    };
+    this.scService
+      .patchScorecard(this.scorecard.id, data, 'customer', 'proposedLimit')
+      .subscribe((res) => {
+        console.log(res);
+        this.scorecard.customer.proposedLimit = res.postUpdate;
+      });
+  }
+
+  sendTotalLimit(value: any) {
+    const data = {
+      customer: {
+        bcsb: {
+          totalExistingLimit: value,
+        },
+      },
+    };
+    this.scService
+      .patchScorecard(
+        this.scorecard.id,
+        data,
+        'customer',
+        'bcsb',
+        'totalExistingLimit'
+      )
+      .subscribe((res) => {
+        console.log(res);
+        this.scorecard.customer.bcsb.totalExistingLimit = res.postUpdate;
+      });
+  }
+
+  sendBcsbStatus(value: any) {
+    const data = {
+      customer: {
+        bcsb: {
+          status: value,
+        },
+      },
+    };
+    this.scService
+      .patchScorecard(this.scorecard.id, data, 'customer', 'bcsb', 'status')
+      .subscribe((res) => {
+        console.log(res);
+        this.scorecard.customer.bcsb.status = res.postUpdate;
+      });
+  }
+
+  sendBcsbRelatedCompaniesStatus(value: any) {
+    const data = {
+      customer: {
+        bcsb: {
+          relatedCompaniesStatus: value,
+        },
+      },
+    };
+    this.scService
+      .patchScorecard(
+        this.scorecard.id,
+        data,
+        'customer',
+        'bcsb',
+        'relatedCompaniesStatus'
+      )
+      .subscribe((res) => {
+        console.log(res);
+        this.scorecard.customer.bcsb.relatedCompaniesStatus = res.postUpdate;
       });
   }
 }

@@ -16,8 +16,8 @@
         <ion-item>
           <ion-label color="primary">Net Worth Support Documents</ion-label>
           <ion-select *ngIf="scorecardDictionary && scorecard" [selectedText]="scorecard.customer.networth.document"
-            interface="action-sheet" ngModel name="supportDocuments" #supportDocuments (ionChange)=log(supportDocuments)
-            placeholder="Select One">
+            interface="action-sheet" ngModel name="supportDocuments" #supportDocuments
+            (ionChange)="sendSupportDocuments(supportDocuments.value)" placeholder="Select One">
             <ion-select-option *ngFor="let netWorth of scorecardDictionary.obligorScores.networthSupport"
               value={{netWorth._id}}>{{netWorth._id | titlecase}}</ion-select-option>
 
@@ -36,20 +36,22 @@
         <ion-item>
           <ion-label color="primary" position="floating">Proposed total limit(OMR '000)</ion-label>
           <ion-input *ngIf="scorecard" [value]="proposedLimit" ngModel name="proposedTotalLimit" #proposedTotalLimit
-            (ionChange)="log(proposedTotalLimit)" debounce=3000 type="number" inputmode="numeric"> </ion-input>
+            (ionChange)="sendProposedLimit(proposedTotalLimit.value)" debounce=3000 type="number" inputmode="numeric">
+          </ion-input>
         </ion-item>
         <ion-item>
           <ion-label color="primary" position="floating">Total Existing Limit in all banks-BCSB (OMR '000)
           </ion-label>
           <ion-input *ngIf="scorecardDictionary && scorecard" [value]="totalLimit" ngModel name="totalExistingLimit"
-            #totalExistingLimit (ionChange)="log(totalExistingLimit)" debounce=3000 type="number" inputmode="numeric">
+            #totalExistingLimit (ionChange)="sendTotalLimit(totalExistingLimit.value)" debounce=3000 type="number"
+            inputmode="numeric">
           </ion-input>
         </ion-item>
         <ion-item>
           <ion-label color="primary">Customer CBO-BCSB status</ion-label>
           <ion-select *ngIf="scorecardDictionary && scorecard" [selectedText]="scorecard.customer.bcsb.status"
-            interface="action-sheet" ngModel name="bcsbStatus" #bcsbStatus (ionChange)=log(bcsbStatus)
-            placeholder="Select One">
+            interface="action-sheet" ngModel name="bcsbStatus" #bcsbStatus
+            (ionChange)="sendBcsbStatus(bcsbStatus.value)" placeholder="Select One">
             <ion-select-option *ngFor="let individualStatus of scorecardDictionary.obligorScores.individualStatus"
               value={{individualStatus._id}}>
               {{individualStatus._id | titlecase}}</ion-select-option>
@@ -60,8 +62,8 @@
           <ion-label color="primary">Customer related company CBO-BCSB status</ion-label>
           <ion-select *ngIf="scorecardDictionary && scorecard"
             [selectedText]="scorecard.customer.bcsb.relatedCompaniesStatus" interface="action-sheet" ngModel
-            name="bcsbRelatedCompaniesStatus" #bcsbRelatedCompaniesStatus (ionChange)=log(bcsbRelatedCompaniesStatus)
-            placeholder="Select One">
+            name="bcsbRelatedCompaniesStatus" #bcsbRelatedCompaniesStatus
+            (ionChange)="sendBcsbRelatedCompaniesStatus(bcsbRelatedCompaniesStatus.value)" placeholder="Select One">
             <ion-select-option
               *ngFor="let relatedCompaniesStatus of scorecardDictionary.obligorScores.relatedCompaniesStatus"
               value={{relatedCompaniesStatus._id}}>
