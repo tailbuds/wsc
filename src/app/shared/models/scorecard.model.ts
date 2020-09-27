@@ -4,8 +4,17 @@ export class Customer {
   name: string;
   id: string;
   facilities: Array<Facility>;
-  networth: object;
-  bcsb: object;
+  networth = {
+    value: '',
+    position: '',
+    document: '',
+    file: '',
+  };
+  bcsb = {
+    totalExistingLimit: '',
+    status: '',
+    relatedCompaniesStatus: '',
+  };
   gender: string;
   ageRange: string;
   nationalityType: string;

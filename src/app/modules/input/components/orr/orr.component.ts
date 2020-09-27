@@ -8,7 +8,7 @@ import { ScorecardService } from 'src/app/shared/services/scorecard.service';
   styleUrls: ['./orr.component.scss'],
 })
 export class OrrComponent implements OnInit {
-  @Input() scorecard: object;
+  @Input() scorecard: Scorecard;
   @Input() scorecardDictionary: object;
   networthvalue: string;
   proposedLimit: string;
