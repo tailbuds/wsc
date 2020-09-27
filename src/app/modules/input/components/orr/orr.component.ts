@@ -18,15 +18,16 @@ export class OrrComponent implements OnInit {
   log(value: any) {}
 
   getData() {
-    if (this.scorecard) {
-      this.networthvalue = this.scorecard.customer.networth.value;
-      this.proposedLimit = this.scorecard.customer.proposedLimit;
-      this.totalLimit = this.scorecard.customer.bcsb.totalExistingLimit;
-    }
+    this.networthvalue = this.scorecard.customer.networth.value;
+    this.proposedLimit = this.scorecard.customer.proposedLimit;
+    this.totalLimit = this.scorecard.customer.bcsb.totalExistingLimit;
   }
+
   ngOnInit() {
     setTimeout(() => {
-      this.getData();
+      if (this.scorecard) {
+        this.getData();
+      }
     }, 500);
   }
 
