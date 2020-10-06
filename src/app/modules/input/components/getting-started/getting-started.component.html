@@ -17,11 +17,11 @@
         </ion-item>
         <ion-item>
           <ion-label color="primary">Age Range</ion-label>
-          <ion-select *ngIf="scorecardDictionary && scorecard" (ionChange)="sendAgeRange(ageRange.vale)"
+          <ion-select *ngIf="scorecardDictionary && scorecard" (ionChange)="sendAgeRange(ageRange.value)"
             [selectedText]="scorecard.customer.ageRange" interface="action-sheet" [ngModel]="ageRange" name="ageRange"
             #ageRange placeholder="Select One">
             <ion-select-option *ngFor="let ageRange of scorecardDictionary.obligorScores.ageRange"
-              value={{ageRange.value}}>{{ageRange._id+" Years" | titlecase}}</ion-select-option>
+              value={{ageRange._id}}>{{ageRange._id+" Years" | titlecase}}</ion-select-option>
           </ion-select>
 
         </ion-item>
